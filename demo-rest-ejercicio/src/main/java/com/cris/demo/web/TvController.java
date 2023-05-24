@@ -27,7 +27,7 @@ public class TvController {
 	@GetMapping("/stock")
 	public List<Televisor> getTelevisores() {
 		agregarTelevisor(a);
-		agregarTelevisor(b);
+		agregarTelevisor(b); 
 		agregarTelevisor(c);
 		return lista;
 	}

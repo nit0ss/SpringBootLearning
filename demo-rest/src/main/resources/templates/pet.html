@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<head>
+    <title>Plantilla de Spring con Thymeleaf</title>
+    <link rel="stylessheet" th:href:"@{/estilo.css}" />
+</head>
+<body>
+<div class="center">
+    <h1>Bienvenido <span th:text="${pet.nombre}"></span></h1>
+    	<img th:src="@{/images/cat.jpg}" />
+    
+</div>
+</body>
+</html>
