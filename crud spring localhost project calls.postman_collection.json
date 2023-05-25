@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "bc539c6f-ad63-4ac4-a930-61e32592a5d4",
+		"name": "crud spring localhost project calls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27330775",
+		"_collection_link": "https://crimson-crater-661165.postman.co/workspace/Team-Workspace~ccd73287-1a9d-4957-83d9-ea7d9a1a6a54/collection/27330775-bc539c6f-ad63-4ac4-a930-61e32592a5d4?action=share&creator=27330775&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "POST-PRODUCT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brand\":\"Amova\",\r\n    \"model\":\"p500\",\r\n    \"price\":560,\r\n    \"description\":\"Amova p500 product Ultima moda\",\r\n    \"image\":\"https://www.mueblesmontessori.com/411-home_default/mueble-higiene-amova.jpg\",\r\n    \"stock\":23\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-PRODUCT",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/product/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-CATALOG",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/product/catalog",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"product",
+						"catalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-CATALOG",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"brand\": \"Amova\",\r\n    \"model\": \"p500\",\r\n    \"price\": 560,\r\n    \"description\": \"Amova p500 product Ultima moda\",\r\n    \"image\": \"https://www.mueblesmontessori.com/411-home_default/mueble-higiene-amova.jpg\",\r\n    \"stock\": 23\r\n  },\r\n  {\r\n    \"brand\": \"XYZ\",\r\n    \"model\": \"123\",\r\n    \"price\": 199.99,\r\n    \"description\": \"XYZ 123 - High-performance device\",\r\n    \"image\": \"https://example.com/product2.jpg\",\r\n    \"stock\": 10\r\n  },\r\n  {\r\n    \"brand\": \"Acme\",\r\n    \"model\": \"SuperGizmo\",\r\n    \"price\": 49.99,\r\n    \"description\": \"The ultimate gadget from Acme\",\r\n    \"image\": \"https://example.com/product3.jpg\",\r\n    \"stock\": 50\r\n  },\r\n  {\r\n    \"brand\": \"TechPro\",\r\n    \"model\": \"X2\",\r\n    \"price\": 799.99,\r\n    \"description\": \"TechPro X2 - Cutting-edge technology\",\r\n    \"image\": \"https://example.com/product4.jpg\",\r\n    \"stock\": 5\r\n  },\r\n  {\r\n    \"brand\": \"Globex\",\r\n    \"model\": \"MegaPower\",\r\n    \"price\": 129.99,\r\n    \"description\": \"Unleash the MegaPower with Globex\",\r\n    \"image\": \"https://example.com/product5.jpg\",\r\n    \"stock\": 15\r\n  },\r\n  {\r\n    \"brand\": \"InnoTech\",\r\n    \"model\": \"ProGenius\",\r\n    \"price\": 299.99,\r\n    \"description\": \"InnoTech ProGenius - Revolutionizing the industry\",\r\n    \"image\": \"https://example.com/product6.jpg\",\r\n    \"stock\": 8\r\n  },\r\n  {\r\n    \"brand\": \"Swift\",\r\n    \"model\": \"UltraSlim\",\r\n    \"price\": 149.99,\r\n    \"description\": \"Swift UltraSlim - Sleek and lightweight\",\r\n    \"image\": \"https://example.com/product7.jpg\",\r\n    \"stock\": 20\r\n  },\r\n  {\r\n    \"brand\": \"MegaTech\",\r\n    \"model\": \"TitanX\",\r\n    \"price\": 999.99,\r\n    \"description\": \"MegaTech TitanX - Unleash your potential\",\r\n    \"image\": \"https://example.com/product8.jpg\",\r\n    \"stock\": 3\r\n  },\r\n  {\r\n    \"brand\": \"AlphaTech\",\r\n    \"model\": \"MaxPro\",\r\n    \"price\": 399.99,\r\n    \"description\": \"AlphaTech MaxPro - Power and performance combined\",\r\n    \"image\": \"https://example.com/product9.jpg\",\r\n    \"stock\": 12\r\n  },\r\n  {\r\n    \"brand\": \"EcoLiving\",\r\n    \"model\": \"GreenSmart\",\r\n    \"price\": 89.99,\r\n    \"description\": \"EcoLiving GreenSmart - Environmentally friendly choice\",\r\n    \"image\": \"https://example.com/product10.jpg\",\r\n    \"stock\": 30\r\n  }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
