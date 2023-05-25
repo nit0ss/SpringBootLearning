@@ -51,7 +51,7 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public int getStock(int id) {
+	public int getStock() {
 		return stock;
 	}
 	public void setStock(int stock) {

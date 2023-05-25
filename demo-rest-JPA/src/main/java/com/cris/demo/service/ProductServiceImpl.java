@@ -1,5 +1,7 @@
 package com.cris.demo.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +19,12 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product getProductById(int id) {
-		Product p = null;
-		Optional<Product> optProduct = productRepository.findById(id);
+		Product product = null;
+		Optional<ProductEntity> optProduct = productRepository.findById(id);
 		if (optProduct.isPresent()) {
-			p = ServiceHelper.getProductFromEntity(optProduct.get());
+			product = ServiceHelper.getProductFromEntity(optProduct.get());
 		}
-		return p;
+		return product;
 	}
 
 	@Override
@@ -39,26 +41,47 @@ public class ProductServiceImpl implements ProductService {
 	 */
 
 	@Override
-	public Product saveProduct(Product p) {
-		
-		return productRepository.save(p);
+	public Product saveProduct(Product product) {
+		ProductEntity productEntity = ServiceHelper.getEntityFromProduct(product);
+		return ServiceHelper.getProductFromEntity(productRepository.save(productEntity));
 	}
 
 	@Override
 	public void removeProduct(Product p) {
 
-		
-		productRepository.delete(p);
+		ProductEntity product = ServiceHelper.getEntityFromProduct(p);
+		productRepository.delete(product);
 
 	}
 
 	@Override
-	public int getStock(int id) {
-		Optional<Product> optProduct = productRepository.findById(id);
+	public int getProductStock(int id) {
+		Optional<ProductEntity> optProduct = productRepository.findById(id);
 		if (optProduct.isPresent()) {
-			return optProduct.get().getStock(id);
+			return optProduct.get().getStock();
 		}
 		return 0;
 
 	}
+
+	@Override
+	public List<Product> getAllProducts() {
+		List<Product> products = new ArrayList<>();
+		List<ProductEntity> productEntities = productRepository.findAll();
+		for (ProductEntity entity : productEntities) {
+			products.add(ServiceHelper.getProductFromEntity(entity));
+		}
+		return products;
+	}
+
+	@Override
+	public List<Product> saveProducts(List<Product> products) {
+		List<Product> savedProducts = new ArrayList<>();
+		for (Product product : products) {
+			ProductEntity productEntity = ServiceHelper.getEntityFromProduct(product);
+			savedProducts.add(ServiceHelper.getProductFromEntity(productRepository.save(productEntity)));
+		}
+		return savedProducts;
+	}
+
 }

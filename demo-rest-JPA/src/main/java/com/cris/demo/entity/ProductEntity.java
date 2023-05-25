@@ -70,7 +70,7 @@ public class ProductEntity {
 		return id;
 	}
 
-	public int getStock(int id) {
+	public int getStock() {
 		return stock;
 	}
 
@@ -78,6 +78,11 @@ public class ProductEntity {
 	public String toString() {
 		return "Product [brand=" + brand + ", model=" + model + ", price=" + price + ", description=" + description
 				+ ", image=" + image + "]";
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+		
 	}
 
 }
